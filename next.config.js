@@ -3,7 +3,8 @@ const nextConfig = {
   output: 'export',
   distDir: 'out',
   basePath: '/farmzasia',
-  images: {
+  assetPrefix: '/farmzasia/',
+    images: {
     unoptimized: true,
     domains: [
       "source.unsplash.com",
@@ -40,6 +41,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
