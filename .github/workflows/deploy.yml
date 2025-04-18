@@ -30,4 +30,4 @@ jobs:
         with:
           folder: out  # 发布的文件夹
           branch: main  # 使用 main 分支进行部署
-          token: ${{ secrets.farmzasia }}  # 使用 GitHub token
+          token: ${{ secrets.farmzasia_token }}  # 使用 GitHub token
