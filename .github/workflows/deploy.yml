@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 或者您的默认分支名
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -22,9 +22,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
           branch: gh-pages
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: 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
