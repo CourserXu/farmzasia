@@ -46,3 +46,4 @@ next-env.d.ts
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
 /src/farmz-asia-website.html
+!/.idea/
