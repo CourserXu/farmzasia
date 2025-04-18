@@ -30,4 +30,4 @@ jobs:
         with:
           folder: out
           branch: gh-pages
-          token: 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
+          token: ${{ secrets.ACCESS_TOKEN }}
