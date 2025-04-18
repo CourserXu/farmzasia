@@ -3,7 +3,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'out',
   basePath: '/farmzasia',
-  assetPrefix: '/farmzasia/',
+  assetPrefix: '/farmzasia',
     images: {
     unoptimized: true,
     domains: [
