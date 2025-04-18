@@ -30,4 +30,4 @@ jobs:
         with:
           folder: out
           branch: gh-pages
-          token: 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
+          token: ${{ secrets.farmzasia }}
