@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { memo } from 'react';
+import { getAssetPath } from '@/utils/assetPath';
 
 const Footer = () => {
   const footerLinks = {
@@ -42,7 +43,7 @@ const Footer = () => {
             <div className="mb-6">
               <Link href="/" aria-label="Go to homepage">
                 <Image
-                  src="/images/farmzasia-logo-white.png"
+                  src={getAssetPath("/images/farmzasia-logo-white.png")}
                   alt="Farmz Asia Logo"
                   width={168}
                   height={100}

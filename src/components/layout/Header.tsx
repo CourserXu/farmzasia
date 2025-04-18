@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/com
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils'; // Import cn utility for class merging
+import { getAssetPath } from '@/utils/assetPath';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -134,7 +135,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="relative w-48 h-12 block" aria-label="Farmz Asia - Home">
           <Image
-            src={isScrolled ? "/images/farmzasia-logo-color.png" : "/images/farmzasia-logo-white.png"}
+            src={isScrolled ? getAssetPath("/images/farmzasia-logo-color.png") : getAssetPath("/images/farmzasia-logo-white.png")}
             alt="Farmz Asia Logo"
             fill
             className="object-contain"
@@ -196,7 +197,7 @@ const Header = () => {
             <div className="flex flex-col h-full">
               <div className="p-4 flex justify-between items-center border-b">
                 <Image
-                  src="/images/farmzasia-logo-color.png"
+                  src={getAssetPath("/images/farmzasia-logo-color.png")}
                   alt="Farmz Asia Logo"
                   width={120}
                   height={30}

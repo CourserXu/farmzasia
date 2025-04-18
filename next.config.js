@@ -2,8 +2,10 @@
 const nextConfig = {
   output: 'export',
   distDir: 'out',
-  basePath: '/farmzasia',
-  assetPrefix: '/farmzasia',
+  ...(process.env.NODE_ENV === 'production' ? {
+    basePath: '/farmzasia',
+    assetPrefix: '/farmzasia',
+  } : {}),
     images: {
     unoptimized: true,
     domains: [

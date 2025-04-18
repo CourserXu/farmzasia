@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -25,7 +26,7 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && videoRef.current) {
-          videoRef.current.src = '/videos/hero-background.mp4';
+          videoRef.current.src = getAssetPath('/videos/hero-background.mp4');
           videoRef.current.load();
           videoRef.current.play();
           observer.unobserve(entry.target);
@@ -73,7 +74,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="/images/hero-poster.jpg"
+            poster={getAssetPath('/images/hero-poster.jpg')}
           >
             {/* Video source will be dynamically added via JavaScript */}
           </video>
@@ -123,7 +124,7 @@ export default function Home() {
             <Card className="border-none shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow text-center">
               <CardContent className="p-8">
                 <div className="mb-4 flex justify-center">
-                  <Image src="/images/awards/industry-awards.jpg" alt="Industry Awards" width={120} height={80} className="object-contain" />
+                  <Image src={getAssetPath("/images/awards/industry-awards.jpg")} alt="Industry Awards" width={120} height={80} className="object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Industry Awards</h3>
                 <p className="text-gray-600">
@@ -135,7 +136,7 @@ export default function Home() {
             <Card className="border-none shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow text-center">
               <CardContent className="p-8">
                 <div className="mb-4 flex justify-center">
-                  <Image src="/images/awards/certifications.jpg" alt="Certifications & Partnerships" width={120} height={80} className="object-contain" />
+                  <Image src={getAssetPath("/images/awards/certifications.jpg")} alt="Certifications & Partnerships" width={120} height={80} className="object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Certifications & Partnerships</h3>
                 <p className="text-gray-600">
@@ -147,7 +148,7 @@ export default function Home() {
             <Card className="border-none shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow text-center">
               <CardContent className="p-8">
                 <div className="mb-4 flex justify-center">
-                  <Image src="/images/awards/media-mentions.jpg" alt="Media Mentions" width={120} height={80} className="object-contain" />
+                  <Image src={getAssetPath("images/awards/media-mentions.jpg")} alt="Media Mentions" width={120} height={80} className="object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Media Mentions</h3>
                 <p className="text-gray-600">
@@ -180,7 +181,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="h-48 bg-primary flex items-center justify-center">
-                <Image src="/images/brands/brand-1.jpg" alt="Farmz Academy" width={150} height={150} className="object-contain" />
+                <Image src={getAssetPath("/images/brands/brand-1.jpg")} alt="Farmz Academy" width={150} height={150} className="object-contain" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Farmz Academy</h3>
@@ -195,7 +196,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="h-48 bg-primary flex items-center justify-center">
-                <Image src="/images/brands/brand-2.jpg" alt="Dr. Mark Leong" width={150} height={150} className="object-contain" />
+                <Image src={getAssetPath("/images/brands/brand-2.jpg")} alt="Dr. Mark Leong" width={150} height={150} className="object-contain" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Dr. Mark Leong</h3>
@@ -210,7 +211,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="h-48 bg-primary flex items-center justify-center">
-                <Image src="/images/brands/brand-3.jpg" alt="Brot and Tee" width={150} height={150} className="object-contain" />
+                <Image src={getAssetPath("/images/brands/brand-3.jpg")} alt="Brot and Tee" width={150} height={150} className="object-contain" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Brot and Tee</h3>
@@ -225,7 +226,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="h-48 bg-primary flex items-center justify-center">
-                <Image src="/images/brands/brand-4.jpg" alt="Kumuya" width={150} height={150} className="object-contain" />
+                <Image src={getAssetPath("/images/brands/brand-4.jpg")} alt="Kumuya" width={150} height={150} className="object-contain" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-dark-color">Kumuya</h3>
@@ -262,7 +263,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             <div className="text-center">
               <div className="w-36 h-36 bg-secondary rounded-full mx-auto mb-6 overflow-hidden">
-                <Image src="/images/experts/expert-1.jpg" alt="Dr. Sarah Chen" width={150} height={150} className="object-cover" />
+                <Image src={getAssetPath("/images/experts/expert-1.jpg")} alt="Dr. Sarah Chen" width={150} height={150} className="object-cover" />
               </div>
               <h3 className="text-lg font-bold text-dark-color mb-1">Dr. Sarah Chen</h3>
               <p className="text-gray-600 text-sm">Nutritional Biochemistry</p>
@@ -270,7 +271,7 @@ export default function Home() {
 
             <div className="text-center">
               <div className="w-36 h-36 bg-secondary rounded-full mx-auto mb-6 overflow-hidden">
-                <Image src="/images/experts/expert-2.jpg" alt="Prof. James Wong" width={150} height={150} className="object-cover" />
+                <Image src={getAssetPath("/images/experts/expert-2.jpg")} alt="Prof. James Wong" width={150} height={150} className="object-cover" />
               </div>
               <h3 className="text-lg font-bold text-dark-color mb-1">Prof. James Wong</h3>
               <p className="text-gray-600 text-sm">Food Science & Safety</p>
@@ -278,7 +279,7 @@ export default function Home() {
 
             <div className="text-center">
               <div className="w-36 h-36 bg-secondary rounded-full mx-auto mb-6 overflow-hidden">
-                <Image src="/images/experts/expert-3.jpg" alt="Dr. Lisa Tan" width={150} height={150} className="object-cover" />
+                <Image src={getAssetPath("/images/experts/expert-3.jpg")} alt="Dr. Lisa Tan" width={150} height={150} className="object-cover" />
               </div>
               <h3 className="text-lg font-bold text-dark-color mb-1">Dr. Lisa Tan</h3>
               <p className="text-gray-600 text-sm">Chronic Disease Nutrition</p>
@@ -286,7 +287,7 @@ export default function Home() {
 
             <div className="text-center">
               <div className="w-36 h-36 bg-secondary rounded-full mx-auto mb-6 overflow-hidden">
-                <Image src="/images/experts/Mark_Leong.png" alt="Dr. Mark Leong" width={150} height={150} className="object-cover" />
+                <Image src={getAssetPath("/images/experts/Mark_Leong.png")} alt="Dr. Mark Leong" width={150} height={150} className="object-cover" />
               </div>
               <h3 className="text-lg font-bold text-dark-color mb-1">Dr. Mark Leong</h3>
               <p className="text-gray-600 text-sm">Cellular Health & Nutrition</p>
@@ -358,7 +359,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
               <div className="h-48 bg-secondary">
-                <Image src="/images/news/news-1.jpg" alt="News 1" width={400} height={200} className="w-full h-full object-cover" />
+                <Image src={getAssetPath("/images/news/news-1.jpg")} alt="News 1" width={400} height={200} className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <p className="text-gray-500 text-sm mb-2">March 15, 2025</p>
@@ -374,7 +375,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
               <div className="h-48 bg-secondary">
-                <Image src="/images/news/news-2.jpg" alt="News 2" width={400} height={200} className="w-full h-full object-cover" />
+                <Image src={getAssetPath("/images/news/news-2.jpg")} alt="News 2" width={400} height={200} className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <p className="text-gray-500 text-sm mb-2">February 28, 2025</p>
@@ -390,7 +391,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
               <div className="h-48 bg-secondary">
-                <Image src="/images/news/news-3.jpg" alt="News 3" width={400} height={200} className="w-full h-full object-cover" />
+                <Image src={getAssetPath("/images/news/news-3.jpg")} alt="News 3" width={400} height={200} className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <p className="text-gray-500 text-sm mb-2">January 10, 2025</p>
