@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]  # 监听 main 分支的推送
 
 jobs:
   build-and-deploy:
@@ -28,6 +28,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out
-          branch: gh-pages
-          token: ${{ secrets.farmzasia }}
+          folder: out  # 发布的文件夹
+          branch: main  # 使用 main 分支进行部署
+          token: ${{ secrets.farmzasia }}  # 使用 GitHub token
