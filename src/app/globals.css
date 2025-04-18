@@ -1,26 +1,222 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Font definitions */
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirBook.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirBlack.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Color variable definitions */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Theme colors */
+    --primary: 153, 70%, 48%;  /* #26D07C - Main brand green */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 9, 63%, 68%;  /* #E88F6F - Secondary orange */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    /* Background and text colors */
+    --background: 0 0% 100%;  /* White background */
+    --foreground: 222.2 84% 4.9%;  /* Dark text */
+    --dark-color: 215 28% 17%;  /* #1E2A3B - Dark background */
+    --light-color: 210 40% 98%;  /* #F8FAFC - Light background */
+    
+    /* Component colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    /* Functional colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;  /* #1DB954 - Success green */
+    --warning: 38 92% 50%;  /* #FFAA00 - Warning yellow */
+    --info: 200 98% 39%;  /* #0099CC - Info blue */
+    
+    /* Border and input */
+    --border: 214.3 31.8% 91.4%;
+    --border-color: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 153, 70%, 48%;
+    
+    /* Others */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 153, 70%, 48%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 9, 63%, 68%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --border-color: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 153, 70%, 48%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border-color;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-avenir;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-8;
+  }
+  
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-medium transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 px-6 py-3;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 px-6 py-3;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-[10px];
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  /* Section styles */
+  .section-title {
+    @apply text-center mb-12;
+  }
+  
+  .section-title h2 {
+    @apply text-3xl font-bold mb-4 text-dark-color;
+  }
+  
+  .section-title p {
+    @apply text-gray-600 max-w-2xl mx-auto;
+  }
+  
+  /* Form elements */
+  .form-input {
+    @apply w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+  
+  .form-textarea {
+    @apply w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+  
+  /* Animations */
+  .fade-in {
+    @apply animate-[fadeIn_0.5s_ease-in-out];
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
 }
