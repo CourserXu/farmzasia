@@ -20,8 +20,11 @@ const Header = () => {
     { title: 'Home', href: '#home' },
     { title: 'About Us', href: '#about' },
     { title: 'Our Brands', href: '#brands' },
+    { title: 'Awards & Recognition', href: '#awards' },
     { title: 'Research & Education', href: '#research' },
-    { title: 'News & Insights', href: '#news' },
+    { title: 'Our Experts', href: '#experts' },
+    { title: 'Success Stories', href: '#success' },
+    { title: 'Get Involved', href: '#get-involved' },
     { title: 'Contact Us', href: '#contact' },
   ];
 
@@ -127,41 +130,41 @@ const Header = () => {
     <header 
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white shadow-md py-3" : "py-5"
       )}
       role="banner"
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative w-48 h-12 block" aria-label="Farmz Asia - Home">
+        <Link href="/" className="relative w-[180px] h-[42px] block transition-all duration-300" aria-label="Farmz Asia - Home">
           <Image
             src={isScrolled ? getAssetPath("/images/farmzasia-logo-color.png") : getAssetPath("/images/farmzasia-logo-white.png")}
             alt="Farmz Asia Logo"
             fill
             className="object-contain"
             priority={true}
-            sizes="(max-width: 768px) 120px, 192px"
+            sizes="180px"
+            style={{ filter: !isScrolled ? 'brightness(0) invert(1)' : 'none' }}
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center flex-nowrap whitespace-nowrap" aria-label="Main Navigation">
           {navLinks.map((link, index) => (
-            <div key={index} className="relative group">
+            <div key={index} className="relative group px-3">
               <Link
                 href={link.href}
                 className={cn(
-                  "font-medium flex items-center transition-colors",
+                  "font-medium flex items-center transition-all duration-300 text-sm xl:text-base relative py-2",
                   isScrolled ? "text-dark" : "text-white",
-                  "hover:text-primary",
-                  isActiveLink(link.href) && "text-primary"
+                  "hover:text-primary"
                 )}
                 aria-current={isActiveLink(link.href) ? 'page' : undefined}
               >
                 {link.title}
                 <span className={cn(
-                  "absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300",
-                  isActiveLink(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                  "absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 rounded-full",
+                  isActiveLink(link.href) ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
                 )}></span>
               </Link>
             </div>
@@ -169,10 +172,14 @@ const Header = () => {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:block">
+        <div className="hidden md:block ml-4">
           <Link
             href="#brands"
-            className="bg-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className={cn(
+              "bg-primary text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap",
+              "hover:bg-primary/90 hover:shadow-lg",
+              "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            )}
           >
             Explore Our Innovations
           </Link>
@@ -183,19 +190,20 @@ const Header = () => {
           <SheetTrigger asChild className="lg:hidden">
             <button
               className={cn(
-                "p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary",
-                isScrolled ? "text-dark" : "text-white"
+                "p-2.5 rounded-md transition-all duration-300",
+                "focus:outline-none focus:ring-2 focus:ring-primary",
+                isScrolled ? "text-dark hover:bg-gray-100" : "text-white hover:bg-white/10"
               )}
               aria-label="Open Menu"
               aria-expanded={isMenuOpen}
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-7 w-7" />
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="w-full sm:max-w-md p-0">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col h-full">
-              <div className="p-4 flex justify-between items-center border-b">
+              <div className="p-4 flex justify-between items-center border-b sticky top-0 bg-white z-10">
                 <Image
                   src={getAssetPath("/images/farmzasia-logo-color.png")}
                   alt="Farmz Asia Logo"

@@ -47,3 +47,5 @@ next-env.d.ts
 /.idea/vcs.xml
 /src/farmz-asia-website.html
 !/.idea/
+/.idea/.sourcegraph/cody_settings.json
+/.cursor/rules/optimized-nextjs-typescript-best-practices-modern-ui-ux.mdc
