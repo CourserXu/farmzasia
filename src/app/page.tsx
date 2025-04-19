@@ -369,7 +369,7 @@ export default function Home() {
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
                 <div className="h-48 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
                   <Image 
-                    src={getAssetPath("/images/brands/brot-and-tee.png")} 
+                    src={getAssetPath("/images/brands/brot-and-tee.jpg")} 
                     alt="Brot and Tee" 
                     width={150} 
                     height={150} 
@@ -442,9 +442,25 @@ export default function Home() {
                 Featured In Global Media
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {['CNN', 'CHANNEL NEWS ASIA', 'Forbes', 'BLOOMBERG', 'THE EDGE', 'FOX NEWS', 'AUGUSTMAN', 'NEW YORK TIMES'].map((media, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center font-semibold text-gray-700">
-                    {media}
+                {[
+                  { name: 'CNN', logo: '/images/media/cnn.png', bgColor: 'bg-[#CC0000]' },
+                  { name: 'CHANNEL NEWS ASIA', logo: '/images/media/cna.png', bgColor: 'bg-[#1A1A1A]' },
+                  { name: 'Forbes', logo: '/images/media/forbes.png', bgColor: 'bg-[#2B2B2B]' },
+                  { name: 'BLOOMBERG', logo: '/images/media/bloomberg.png', bgColor: 'bg-[#000000]' },
+                  { name: 'THE EDGE', logo: '/images/media/the-edge.png', bgColor: 'bg-[#1A1A1A]' },
+                  { name: 'FOX NEWS', logo: '/images/media/fox-news.png', bgColor: 'bg-[#003366]' },
+                  { name: 'AUGUSTMAN', logo: '/images/media/augustman.png', bgColor: 'bg-[#D3D3D3]' },
+                  { name: 'NEW YORK TIMES', logo: '/images/media/nyt.png', bgColor: 'bg-[#000000]' }
+                ].map((media, index) => (
+                  <div key={index} className={`${media.bgColor} rounded-lg p-4 flex items-center justify-center h-20`}>
+                    <Image
+                      src={getAssetPath(media.logo)}
+                      alt={media.name}
+                      width={120}
+                      height={40}
+                      className="object-contain"
+                      priority={index < 4}
+                    />
                   </div>
                 ))}
               </div>

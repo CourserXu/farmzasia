@@ -198,12 +198,12 @@ const Footer = () => {
               "addressCountry": "SG"
             },
             "sameAs": [
-              "https://www.facebook.com/farmzasia",
-              "https://www.twitter.com/farmzasia",
-              "https://www.instagram.com/farmzasia",
-              "https://www.linkedin.com/company/farmzasia"
+              "https://web.facebook.com/FarmzAsia/",
+              "https://www.instagram.com/farmz_asia/",
+              "https://www.tiktok.com/@dr.markleong.official/",
+              "https://www.youtube.com/user/MarkyKills/"
             ]
-          })
+          }, null, 0)
         }}
       />
     </footer>
