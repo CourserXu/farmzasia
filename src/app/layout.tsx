@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Montserrat, Lato } from 'next/font/google';
 import { Toaster } from "sonner";
+import FontLoader from '@/components/FontLoader';
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${lato.variable}`}>
       <body className="flex flex-col min-h-screen font-montserrat"
       suppressHydrationWarning={true}>
+        <FontLoader />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
