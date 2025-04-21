@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { Montserrat, Lato } from 'next/font/google';
 import { Toaster } from "sonner";
 import FontLoader from '@/components/FontLoader';
+import { getAssetPath } from '@/utils/assetPath';
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
+        url: getAssetPath('/favicon.ico'),
         sizes: 'any',
       },
     ],
     apple: {
-      url: '/apple-icon.png',
+      url: getAssetPath('/apple-icon.png'),
       sizes: '180x180',
     },
   },
