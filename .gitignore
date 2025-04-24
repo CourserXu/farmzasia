@@ -49,3 +49,4 @@ next-env.d.ts
 !/.idea/
 /.idea/.sourcegraph/cody_settings.json
 /.cursor/rules/optimized-nextjs-typescript-best-practices-modern-ui-ux.mdc
+/.trae/rules/project_rules.md

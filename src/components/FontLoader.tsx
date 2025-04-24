@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from 'react';
-import { getAssetPath } from '@/utils/assetPath';
+import {useEffect} from 'react';
+import {getAssetPath} from '@/utils/assetPath';
 
 export default function FontLoader() {
   useEffect(() => {

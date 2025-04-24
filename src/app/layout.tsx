@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Montserrat, Lato } from 'next/font/google';
-import { Toaster } from "sonner";
+import {Lato, Montserrat} from 'next/font/google';
+import {Toaster} from "sonner";
 import FontLoader from '@/components/FontLoader';
-import { getAssetPath } from '@/utils/assetPath';
+import {getAssetPath} from '@/utils/assetPath';
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],

@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
-import { memo } from 'react';
-import { getAssetPath } from '@/utils/assetPath';
+import {Facebook, Instagram, Mail, MapPin, Phone, Youtube} from 'lucide-react';
+import {FaTiktok} from 'react-icons/fa';
+import {memo} from 'react';
+import {getAssetPath} from '@/utils/assetPath';
 
 const Footer = () => {
   const footerLinks = {

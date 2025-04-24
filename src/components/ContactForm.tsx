@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import {useState} from 'react';
+import {Button} from '@/components/ui/button';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -45,7 +45,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <h3 className="text-xl font-bold text-primary mb-4">Contact Us</h3>
+      <h3 className="text-xl font-bold text-foreground mb-4">Contact Us</h3>
       
       {submitSuccess && (
         <div className="p-3 bg-green-100 text-green-700 rounded-md mb-4">
@@ -114,7 +114,7 @@ export default function ContactForm() {
       
       <Button 
         type="submit" 
-        className="w-full bg-primary hover:bg-primary/90 text-pure-white py-2 rounded-md transition-colors"
+        className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-md hover:bg-[#e5e7eb] transform hover:scale-105 shadow-lg text-base sm:text-lg font-semibold"
         disabled={isSubmitting}
       >
         {isSubmitting ? 'Submitting...' : 'Submit'}

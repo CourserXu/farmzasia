@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { Menu, X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils'; // Import cn utility for class merging
-import { getAssetPath } from '@/utils/assetPath';
+import {Sheet, SheetContent, SheetTitle, SheetTrigger} from '@/components/ui/sheet';
+import {Menu, X} from 'lucide-react';
+import {usePathname} from 'next/navigation';
+import {cn} from '@/lib/utils'; // Import cn utility for class merging
+import {getAssetPath} from '@/utils/assetPath';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
