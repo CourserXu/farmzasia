@@ -66,8 +66,8 @@ export default function Home() {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.5,
+      rootMargin: '0px 0px -20px 0px'
     });
 
     animatedSections.forEach(section => observer.observe(section));
@@ -146,6 +146,7 @@ export default function Home() {
               muted
               loop
               playsInline
+              poster={getAssetPath("/images/hero-poster.jpg")}
             />
           </div>
           {/* Overlay to improve text readability */}
@@ -264,41 +265,65 @@ export default function Home() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Evidence-based innovation */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-semibold mb-3 text-primary">Evidence-based innovation</h4>
-                      <p className="text-foreground">Driving progress through scientific research and validated solutions</p>
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                    <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                      <Image
+                        src={getAssetPath("/images/core_values/evidence_based_innovation.jpg")} // Assuming image name
+                        alt="Evidence-based Innovation"
+                        layout="fill" // Use fill layout
+                        objectFit="cover" // Cover the container
+                        className="rounded-t-xl"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-lg font-semibold text-primary mb-2">
+                        Evidence-based Innovation
+                      </h4>
+                      <p className="text-sm text-dark-gray">
+                        Driving progress through scientific research and validated solutions.
+                      </p>
                     </div>
                   </div>
 
                   {/* Community transformation */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-semibold mb-3 text-primary">Community transformation</h4>
-                      <p className="text-foreground">Building healthier communities through education and empowerment</p>
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                     <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                      <Image
+                        src={getAssetPath("/images/core_values/community_transformation.jpg")} // Assuming image name
+                        alt="Community Transformation"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-t-xl"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-lg font-semibold text-primary mb-2">
+                        Community Transformation
+                      </h4>
+                      <p className="text-sm text-dark-gray">
+                        Building healthier communities through education and empowerment.
+                      </p>
                     </div>
                   </div>
 
                   {/* Food-first health empowerment */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-semibold mb-3 text-primary">Food-first health empowerment</h4>
-                      <p className="text-foreground">Prioritizing nutrition as the foundation of holistic wellness</p>
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                     <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                      <Image
+                        src={getAssetPath("/images/core_values/food-first_health_empowerment.jpg")} // Assuming image name
+                        alt="Food-first Health Empowerment"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-t-xl"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-lg font-semibold text-primary mb-2">
+                        Food-first Health Empowerment
+                      </h4>
+                      <p className="text-sm text-dark-gray">
+                        Prioritizing nutrition as the foundation of holistic wellness.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -309,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* Our Brands Section */}
-      <section id="brands" className="relative py-20 bg-gray-50/90 opacity-0 animate-fade-in-up">
+      <section id="brands" className="relative py-24 bg-gray-50/90 opacity-0 animate-fade-in-up">
         <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-b from-transparent to-gray-100/80 pointer-events-none"></div>
         <div className="container-custom">
           <div className="text-center mb-12">
@@ -325,7 +350,7 @@ export default function Home() {
             {/* Farmz Academy */}
             <Link href="/brands/farmz-academy" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <div className="h-48 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
+                <div className="h-44 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
                   <Image
                     src={getAssetPath("/images/brands/farmz-academy.png")}
                     alt="Farmz Academy"
@@ -334,11 +359,11 @@ export default function Home() {
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-[180px]">
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     Farmz Academy
                   </h3>
-                  <p className="text-foreground text-sm">
+                  <p className="text-foreground text-sm flex-grow">
                     Therapeutic nutrition programs for chronic conditions
                   </p>
                   <div className="mt-4 text-foreground group-hover:text-primary font-medium group-hover:translate-x-2 transition-transform">
@@ -351,7 +376,7 @@ export default function Home() {
             {/* Dr. Mark Leong */}
             <Link href="/brands/dr-mark-leong" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <div className="h-48 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
+                <div className="h-44 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
                   <Image
                     src={getAssetPath("/images/brands/dr-mark-leong.png")}
                     alt="Dr. Mark Leong"
@@ -360,11 +385,11 @@ export default function Home() {
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-[180px]">
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     Dr. Mark Leong
                   </h3>
-                  <p className="text-foreground text-sm">
+                  <p className="text-foreground text-sm flex-grow">
                     Weight loss and cellular renewal through detox science
                   </p>
                   <div className="mt-4 text-foreground group-hover:text-primary font-medium group-hover:translate-x-2 transition-transform">
@@ -377,20 +402,20 @@ export default function Home() {
             {/* Brot and Tee */}
             <Link href="/brands/brot-and-tee" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <div className="h-48 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
+                <div className="h-44 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
                   <Image
-                    src={getAssetPath("/images/brands/brot-and-tee.jpg")}
+                    src={getAssetPath("/images/brands/brot-and-tee.png")}
                     alt="Brot and Tee"
                     width={150}
                     height={150}
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-[180px]">
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     Brot and Tee
                   </h3>
-                  <p className="text-foreground text-sm">
+                  <p className="text-foreground text-sm flex-grow">
                     Gut-friendly breads for digestive health and inflammation
                   </p>
                   <div className="mt-4 text-foreground group-hover:text-primary font-medium group-hover:translate-x-2 transition-transform">
@@ -403,7 +428,7 @@ export default function Home() {
             {/* Blooma */}
             <Link href="/brands/blooma" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <div className="h-48 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
+                <div className="h-44 bg-primary/10 flex items-center justify-center p-6 group-hover:bg-primary/20 transition-colors">
                   <Image
                     src={getAssetPath("/images/brands/blooma.png")}
                     alt="Blooma"
@@ -412,11 +437,11 @@ export default function Home() {
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-[180px]">
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     Blooma
                   </h3>
-                  <p className="text-foreground text-sm">
+                  <p className="text-foreground text-sm flex-grow">
                     Clean skincare solutions tailored for women above 40
                   </p>
                   <div className="mt-4 text-foreground group-hover:text-primary font-medium group-hover:translate-x-2 transition-transform">
@@ -444,53 +469,72 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto">
             {/* Media Features */}
-            <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-foreground flex items-center">
-                <svg className="w-6 h-6 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
+            <div className="bg-white rounded-xl p-4 shadow-lg mb-8 max-h-[320px] overflow-hidden">
+              <h3 className="text-2xl font-bold mb-4 text-foreground text-center">
                 Featured In Global Media
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { name: 'CNN', logo: '/images/media/cnn.png', bgColor: 'bg-[#CC0000]' },
-                  { name: 'CHANNEL NEWS ASIA', logo: '/images/media/cna.png', bgColor: 'bg-[#1A1A1A]' },
-                  { name: 'Forbes', logo: '/images/media/forbes.png', bgColor: 'bg-[#2B2B2B]' },
-                  { name: 'BLOOMBERG', logo: '/images/media/bloomberg.png', bgColor: 'bg-[#000000]' },
-                  { name: 'THE EDGE', logo: '/images/media/the-edge.png', bgColor: 'bg-[#1A1A1A]' },
-                  { name: 'FOX NEWS', logo: '/images/media/fox-news.png', bgColor: 'bg-[#003366]' },
-                  { name: 'AUGUSTMAN', logo: '/images/media/augustman.png', bgColor: 'bg-[#D3D3D3]' },
-                  { name: 'NEW YORK TIMES', logo: '/images/media/nyt.png', bgColor: 'bg-[#000000]' }
-                ].map((media, index) => (
-                  <div key={index} className={`${media.bgColor} rounded-lg p-4 flex items-center justify-center h-20`}>
-                    <Image
-                      src={getAssetPath(media.logo)}
-                      alt={media.name}
-                      width={120}
-                      height={40}
-                      className="object-contain"
-                      priority={index < 4}
-                    />
-                  </div>
-                ))}
+              <div className="w-full overflow-x-auto scrollbar-hide">
+                <div className="flex items-center gap-8 min-w-max animate-marquee">
+                  {[...Array(11), ...Array(11)].map((_, idx) => (
+                    <div key={idx} className="flex-shrink-0 flex items-center justify-center h-[160px] md:h-[220px] lg:h-[260px] xl:h-[300px] p-2">
+                      <Image
+                        src={getAssetPath(`/images/media/${((idx % 11) + 1).toString().padStart(2, '0')}.jpg`)} // Cycle through 01 to 11
+                        alt={`Media ${((idx % 11) + 1)}`}
+                        width={180}
+                        height={80}
+                        className="mx-auto rounded-lg object-contain" // Add object-contain
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
+              <style jsx>{`
+                .animate-marquee {
+                  animation: marquee 25s linear infinite;
+                  will-change: transform; /* Optimize animation */
+                }
+                @keyframes marquee {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+                }
+                .scrollbar-hide {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                }
+              `}</style>
             </div>
 
             {/* Records & Awards */}
             <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-foreground flex items-center">
-                <svg className="w-6 h-6 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
+              <h3 className="text-2xl font-bold mb-4 text-foreground text-center">
                 Singapore Book of Records
               </h3>
-              <div className="space-y-4">
-                <div className="bg-primary/5 rounded-lg p-6">
-                  <div className="font-semibold text-lg mb-2 text-foreground">2-Time Record Holder</div>
-                  <ul className="list-disc list-inside space-y-2 text-foreground">
-                    <li>BIGGEST WEIGHT LOSS IN 7 DAYS</li>
-                    <li>LONGEST LO HEI BY THE COMMUNITY</li>
-                  </ul>
+              {/* Flex container for image and text */}
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Image Section */}
+                <div className="w-full md:w-1/3 flex-shrink-0">
+                  <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
+                    <Image 
+                      src={getAssetPath("/images/awards/singapore_book_of_records.jpg")}
+                      alt="Singapore Book of Records Award" // Provide a descriptive alt text
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                {/* Text Content Section */}
+                <div className="w-full md:w-2/3 space-y-4">
+                  <div className="bg-primary/5 rounded-lg p-6">
+                    <div className="font-semibold text-lg mb-2 text-foreground">2-Time Record Holder</div>
+                    <ul className="list-disc list-inside space-y-2 text-foreground">
+                      <li>BIGGEST WEIGHT LOSS IN 7 DAYS</li>
+                      <li>LONGEST LO HEI BY THE COMMUNITY</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -946,20 +990,30 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Volunteer */}
+              {/* Volunteer - Updated with Image */}
               <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden">
+                  <div className="relative w-full h-48"> {/* Image container */}
+                    <Image
+                      src={getAssetPath("/images/our_movement/volunteer_at_our_events.jpg")} 
+                      alt="Volunteers working at a community event"
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                    Volunteer at Our Events
-                  </h3>
-                  <p className="text-foreground flex-grow">
-                    Make a difference by supporting our community events and wellness initiatives.
-                  </p>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                      Volunteer at Our Events
+                    </h3>
+                    <p className="text-foreground flex-grow mb-4"> {/* Added mb-4 for spacing */}
+                      Make a difference by supporting our community events and wellness initiatives.
+                    </p>
+                    {/* Optional: Add a button if needed, matching other cards */}
+                    {/* <Button variant="outline" className="mt-auto border-primary text-primary hover:bg-primary/10 hover:text-primary w-full">
+                      Learn More
+                    </Button> */}
+                  </div>
                 </div>
               </div>
             </div>
