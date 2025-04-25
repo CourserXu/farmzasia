@@ -2,12 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import {Button} from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import ContactForm from '@/components/ContactForm';
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {ArrowUp} from 'lucide-react';
-import {cn} from '@/lib/utils';
-import {getAssetPath} from '@/utils/assetPath';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ArrowUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Home() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -128,6 +128,33 @@ export default function Home() {
       behavior: 'smooth'
     });
   };
+
+  const awards = [
+    {
+      src: '/images/awards/singapore_quality_service_award.png',
+      alt: 'Singapore Quality Service Award',
+    },
+    {
+      src: '/images/awards/Best_in_Food_Safety_Solutions_by_Prestige_Awards.jpg',
+      alt: 'Best in Food Safety Solutions',
+    },
+    {
+      src: '/images/awards/HACCP_certified.jpg',
+      alt: 'HACCP Certified',
+    },
+    {
+      src: '/images/awards/GMP_certified.jpg',
+      alt: 'GMP Certified',
+    },
+    {
+      src: '/images/awards/clean_label_partnerships.png',
+      alt: 'Clean Label Partnerships',
+    },
+    {
+      src: "/images/awards/Certified_Provider_of_Singapore's_SkillsFuture_Courses.png",
+      alt: "SkillsFuture Certified Provider",
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -266,7 +293,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Evidence-based innovation */}
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-                    <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                    <div className="relative w-full h-80"> {/* Container for image, increased height */}
                       <Image
                         src={getAssetPath("/images/core_values/evidence_based_innovation.jpg")} // Assuming image name
                         alt="Evidence-based Innovation"
@@ -287,7 +314,7 @@ export default function Home() {
 
                   {/* Community transformation */}
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-                     <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                    <div className="relative w-full h-80"> {/* Container for image, increased height */}
                       <Image
                         src={getAssetPath("/images/core_values/community_transformation.jpg")} // Assuming image name
                         alt="Community Transformation"
@@ -308,7 +335,7 @@ export default function Home() {
 
                   {/* Food-first health empowerment */}
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-                     <div className="relative w-full h-80"> {/* Container for image, increased height */} 
+                    <div className="relative w-full h-80"> {/* Container for image, increased height */}
                       <Image
                         src={getAssetPath("/images/core_values/food-first_health_empowerment.jpg")} // Assuming image name
                         alt="Food-first Health Empowerment"
@@ -509,30 +536,55 @@ export default function Home() {
 
             {/* Records & Awards */}
             <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold mb-4 text-foreground text-center">
-                Singapore Book of Records
-              </h3>
               {/* Flex container for image and text */}
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image Section */}
-                <div className="w-full md:w-1/3 flex-shrink-0">
-                  <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                    <Image 
+                <div className="w-full md:w-1/2 flex-shrink-0">
+                  <div className="relative aspect-[5/6] rounded-xl overflow-hidden shadow-lg group transition-all duration-300">
+                    <Image
                       src={getAssetPath("/images/awards/singapore_book_of_records.jpg")}
-                      alt="Singapore Book of Records Award" // Provide a descriptive alt text
+                      alt="Singapore Book of Records Award"
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </div>
                 {/* Text Content Section */}
                 <div className="w-full md:w-2/3 space-y-4">
-                  <div className="bg-primary/5 rounded-lg p-6">
-                    <div className="font-semibold text-lg mb-2 text-foreground">2-Time Record Holder</div>
-                    <ul className="list-disc list-inside space-y-2 text-foreground">
-                      <li>BIGGEST WEIGHT LOSS IN 7 DAYS</li>
-                      <li>LONGEST LO HEI BY THE COMMUNITY</li>
+                  <div className="bg-primary/5 rounded-lg p-6 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+                      <Image
+                        src={getAssetPath("/images/awards/singapore_book_of_records_logo.png")}
+                        alt="Singapore Book of Records Logo"
+                        width={100}
+                        height={20}
+                        className="h-auto"
+                      />
+                      <span className="font-semibold text-lg text-foreground">
+                        2-Time Record Holder
+                      </span>
+                    </div>
+                    {/* List of Records */}
+                    {/* Unordered list: removed default bullets (list-none), added vertical spacing between items (space-y-2), set text color */}
+                    <ul className="list-none space-y-2 text-foreground">
+
+                      {/* List Item 1 */}
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                        </svg>
+                        <span>BIGGEST WEIGHT LOSS IN 7 DAYS</span>
+                      </li>
+
+                      {/* List Item 2 */}
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                        </svg>
+                        <span>LONGEST LO HEI BY THE COMMUNITY</span>
+                      </li>
+
                     </ul>
                   </div>
                 </div>
@@ -541,33 +593,27 @@ export default function Home() {
 
             {/* Industry Recognition */}
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-foreground flex items-center">
-                <svg className="w-6 h-6 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-                Awards & Certifications
+              <h3 className="text-2xl font-bold mb-8 text-center text-foreground">
+                Industry Recognition
               </h3>
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-primary/5 rounded-lg p-6">
-                    <div className="font-semibold text-lg mb-2 text-foreground">Awards</div>
-                    <ul className="list-disc list-inside space-y-2 text-foreground">
-                      <li>SINGAPORE QUALITY SERVICE AWARD</li>
-                      <li>Best in Food Safety Solutions by Prestige Awards</li>
-                    </ul>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 place-items-center">
+                {awards.map((award, idx) => (
+                  <div key={idx} className="w-full max-w-[160px] transition-transform duration-300 hover:scale-110">
+                    <div className="relative aspect-square w-full">
+                      <Image
+                        src={award.src}
+                        alt={award.alt}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 50vw, 160px"
+                      />
+                    </div>
+                    <p className="text-sm text-center mt-2 text-foreground/80">{award.alt}</p>
                   </div>
-                  <div className="bg-primary/5 rounded-lg p-6">
-                    <div className="font-semibold text-lg mb-2 text-foreground">Certifications</div>
-                    <ul className="list-disc list-inside space-y-2 text-foreground">
-                      <li>HACCP Certified</li>
-                      <li>GMP Certified</li>
-                      <li>Clean Label Partnerships</li>
-                      <li>Certified Provider of Singapore's SkillsFuture Courses</li>
-                    </ul>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -588,51 +634,63 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Toxicology and Food Safety */}
-              <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                  </div>
+              <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <Image
+                    src={getAssetPath('/images/Research/toxiccology_and_food_safety_testing.jpg')}
+                    alt="Toxicology and Food Safety Testing"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     Toxicology and Food Safety Testing
                   </h3>
-                  <p className="text-foreground">
+                  <p className="text-foreground flex-grow">
                     Comprehensive analysis and testing protocols ensuring the highest standards of food safety and quality control.
                   </p>
                 </div>
               </div>
 
               {/* Detoxification and Gut Health */}
-              <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
+              <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <Image
+                    src={getAssetPath('/images/Research/detoxification_and_gut_health_protocol.jpg')}
+                    alt="Detoxification and Gut Health Protocols"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     Detoxification and Gut Health Protocols
                   </h3>
-                  <p className="text-foreground">
+                  <p className="text-foreground flex-grow">
                     Research-backed protocols designed to optimize digestive health and support natural detoxification processes.
                   </p>
                 </div>
               </div>
 
               {/* Nutrition Workshops */}
-              <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
+              <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <Image
+                    src={getAssetPath('/images/Research/nutrition_workshop.jpg')}
+                    alt="Nutrition Workshops"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     Nutrition Workshops
                   </h3>
-                  <p className="text-foreground">
+                  <p className="text-foreground flex-grow">
                     Educational programs tailored for both public audiences and healthcare professionals, bridging scientific knowledge with practical application.
                   </p>
                 </div>
@@ -870,7 +928,7 @@ export default function Home() {
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg">
                   <div className="relative h-[300px]">
                     <Image
-                      src={getAssetPath("/images/transformations/before-after-1.jpg")}
+                      src={getAssetPath("/images/transformations/8_month.jpg")}
                       alt="Weight Loss Transformation"
                       fill
                       className="object-cover"
@@ -886,7 +944,7 @@ export default function Home() {
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg">
                   <div className="relative h-[300px]">
                     <Image
-                      src={getAssetPath("/images/transformations/before-after-2.jpg")}
+                      src={getAssetPath("/images/transformations/12_weeks.jpg")}
                       alt="Health Transformation"
                       fill
                       className="object-cover"
@@ -990,12 +1048,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Volunteer - Updated with Image */}
+              {/* Volunteer */}
               <div className="group">
                 <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden">
-                  <div className="relative w-full h-48"> {/* Image container */}
+                  <div className="relative w-full h-64"> {/* Image container */}
                     <Image
-                      src={getAssetPath("/images/our_movement/volunteer_at_our_events.jpg")} 
+                      src={getAssetPath("/images/our_movement/volunteer_at_our_events.jpg")}
                       alt="Volunteers working at a community event"
                       layout="fill"
                       objectFit="cover"
