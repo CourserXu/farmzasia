@@ -131,31 +131,31 @@ export default function Home() {
 
   const awards = [
     {
-      src: '/images/awards/singapore_quality_service_award.png',
+      src: getAssetPath("/images/awards/singapore_quality_service_award.png"),
       alt: 'Singapore Quality Service Award',
     },
     {
-      src: '/images/awards/Best_in_Food_Safety_Solutions_by_Prestige_Awards.jpg',
+      src: getAssetPath("/images/awards/Best_in_Food_Safety_Solutions_by_Prestige_Awards.jpg"),
       alt: 'Best in Food Safety Solutions',
     },
     {
-      src: '/images/awards/HACCP_certified.jpg',
+      src: getAssetPath("/images/awards/HACCP_certified.jpg"),
       alt: 'HACCP Certified',
     },
     {
-      src: '/images/awards/GMP_certified.jpg',
+      src: getAssetPath("/images/awards/GMP_certified.jpg"),
       alt: 'GMP Certified',
     },
     {
-      src: '/images/awards/clean_label_partnerships.png',
+      src: getAssetPath("/images/awards/clean_label_partnerships.png"),
       alt: 'Clean Label Partnerships',
     },
     {
-      src: "/images/awards/Certified_Provider_of_Singapore's_SkillsFuture_Courses.png",
+      src: getAssetPath("/images/awards/Certified_Provider_of_Singapore\'s_SkillsFuture_Courses.png"),
       alt: "SkillsFuture Certified Provider",
     },
   ];
-
+  
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
