@@ -130,20 +130,20 @@ const Header = () => {
     <header 
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-3" : "py-5"
+        isScrolled ? "bg-white shadow-md py-3 sm:py-4 md:py-5" : "py-4 sm:py-5 md:py-6 lg:py-7"
       )}
       role="banner"
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative w-[180px] h-[42px] block transition-all duration-300" aria-label="Farmz Asia - Home">
+        <Link href="/" className="relative w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] h-[66px] sm:h-[76px] md:h-[86px] lg:h-[96px] block transition-all duration-300" aria-label="Farmz Asia - Home">
           <Image
             src={isScrolled ? getAssetPath("/images/farmzasia-logo-color.png") : getAssetPath("/images/farmzasia-logo-white.png")}
             alt="Farmz Asia Logo"
             fill
             className="object-contain"
             priority={true}
-            sizes="180px"
+            sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, 420px"
             style={{ filter: !isScrolled ? 'brightness(0) invert(1)' : 'none' }}
           />
         </Link>
@@ -207,8 +207,8 @@ const Header = () => {
                 <Image
                   src={getAssetPath("/images/farmzasia-logo-color.png")}
                   alt="Farmz Asia Logo"
-                  width={120}
-                  height={30}
+                  width={160}
+                  height={40}
                   className="object-contain"
                 />
                 <button 

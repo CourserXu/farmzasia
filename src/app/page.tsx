@@ -181,11 +181,11 @@ export default function Home() {
         </div>
 
         <div className="container-custom z-10 relative">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center pt-32 sm:pt-28 md:pt-24 lg:pt-0">
             {/* Animated text entrance */}
             <div className="space-y-6 animate-fade-in">
               {/* Main heading with gradient text */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-6 leading-tight">
                 Transforming Health Through
                 <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">
@@ -194,40 +194,40 @@ export default function Home() {
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-white/90">
+              <p className="text-base sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-white/90">
                 We are a research-driven, community-centered parent company powering Asia's trusted wellness brands.
               </p>
 
               {/* Tagline */}
-              <p className="text-base sm:text-lg text-white/80 mt-4 font-medium">
+              <p className="text-sm sm:text-base md:text-lg text-white/80 mt-2 sm:mt-4 font-medium">
                 Empowering lives through clean, science-backed solutions—built for the modern Asian lifestyle.
               </p>
 
               {/* Mission Highlight */}
-              <div className="mt-8 md:mt-12 p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4">
+              <div className="mt-4 sm:mt-8 md:mt-12 p-2 sm:p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <h3 className="text-base sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4">
                   Our Mission: Feed 1 Million Underprivileged Children by 2027
                 </h3>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-8">
                   <div className="text-center">
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
+                    <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
                       <span className="count-up" data-target="250000">0</span>+
                     </div>
-                    <div className="text-sm uppercase tracking-wider text-white/80">
+                    <div className="text-xs sm:text-sm uppercase tracking-wider text-white/80">
                       Children Fed
                     </div>
                   </div>
                   <div className="hidden sm:block h-16 w-1 bg-white/30"></div>
                   <div className="text-center">
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
+                    <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
                       <span className="count-up" data-target="25">0</span>%
                     </div>
-                    <div className="text-sm uppercase tracking-wider text-white/80">
+                    <div className="text-xs sm:text-sm uppercase tracking-wider text-white/80">
                       Progress
                     </div>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-2 sm:mt-4">
                   <div className="w-full bg-white/20 rounded-full h-2">
                     <div className="bg-white h-2 rounded-full progress-bar" style={{ width: '25%' }}></div>
                   </div>
@@ -235,14 +235,14 @@ export default function Home() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mt-4 sm:mt-10 md:mt-12">
                 <Link href="#brands">
-                  <Button className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 rounded-full px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-semibold transition-all transform hover:scale-105 shadow-lg">
+                  <Button className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 rounded-full px-6 sm:px-12 py-3 sm:py-6 text-base sm:text-xl font-semibold transition-all transform hover:scale-105 shadow-lg">
                     Explore Our Brands
                   </Button>
                 </Link>
                 <Link href="#research">
-                  <Button variant="outline" className="w-full sm:w-auto bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary rounded-full px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-semibold transition-all transform hover:scale-105">
+                  <Button variant="outline" className="w-full sm:w-auto bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary rounded-full px-6 sm:px-12 py-3 sm:py-6 text-base sm:text-xl font-semibold transition-all transform hover:scale-105">
                     Learn About Our Research
                   </Button>
                 </Link>

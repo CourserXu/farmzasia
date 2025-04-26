@@ -50,3 +50,7 @@ next-env.d.ts
 /.idea/.sourcegraph/cody_settings.json
 /.cursor/rules/optimized-nextjs-typescript-best-practices-modern-ui-ux.mdc
 /.trae/rules/project_rules.md
+!/.junie/guidelines.md
+/.junie/guidelines.md
+/jest.config.js
+/jest.setup.js
