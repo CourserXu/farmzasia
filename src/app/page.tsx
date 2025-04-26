@@ -185,7 +185,7 @@ export default function Home() {
             {/* Animated text entrance */}
             <div className="space-y-6 animate-fade-in">
               {/* Main heading with gradient text */}
-              <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-6 leading-tight">
+              <h1 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-6 leading-tight">
                 Transforming Health Through
                 <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">
@@ -194,12 +194,12 @@ export default function Home() {
               </h1>
 
               {/* Subheading */}
-              <p className="text-base sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-white/90">
+              <p className="text-sm sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-white/90">
                 We are a research-driven, community-centered parent company powering Asia's trusted wellness brands.
               </p>
 
               {/* Tagline */}
-              <p className="text-sm sm:text-base md:text-lg text-white/80 mt-2 sm:mt-4 font-medium">
+              <p className="text-xs sm:text-base md:text-lg text-white/80 mt-2 sm:mt-4 font-medium">
                 Empowering lives through clean, science-backed solutions—built for the modern Asian lifestyle.
               </p>
 
