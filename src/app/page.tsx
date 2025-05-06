@@ -155,7 +155,7 @@ export default function Home() {
       alt: "SkillsFuture Certified Provider",
     },
   ];
-  
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -433,8 +433,8 @@ export default function Home() {
                   <Image
                     src={getAssetPath("/images/brands/brot-and-tee.png")}
                     alt="Brot and Tee"
-                    width={150}
-                    height={150}
+                    width={195}
+                    height={195}
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -459,8 +459,8 @@ export default function Home() {
                   <Image
                     src={getAssetPath("/images/brands/blooma.png")}
                     alt="Blooma"
-                    width={150}
-                    height={150}
+                    width={195}
+                    height={195}
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -1016,35 +1016,47 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Franchise Partner */}
               <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden">
+                  <div className="relative w-full h-64"> {/* Image container */}
+                    <Image
+                      src={getAssetPath("/images/our_movement/become_a_franchise_partner.jpg")}
+                      alt="Volunteers working at a community event"
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                    Become a Franchise Partner
-                  </h3>
-                  <p className="text-foreground flex-grow">
-                    Join our network of wellness entrepreneurs and bring our proven health solutions to your community.
-                  </p>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                      Become a Franchise Partner
+                    </h3>
+                    <p className="text-foreground flex-grow">
+                      Join our network of wellness entrepreneurs and bring our proven health solutions to your community.
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Health Challenge */}
               <div className="group">
-                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  <div className="w-16 h-16 mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden">
+                  <div className="relative w-full h-64"> {/* Image container */}
+                    <Image
+                      src={getAssetPath("/images/our_movement/join_a_health_challenge.jpg")}
+                      alt="Volunteers working at a community event"
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                    Join a Health Challenge
-                  </h3>
-                  <p className="text-foreground flex-grow">
-                    Participate in our community-driven health challenges and transform your wellness journey.
-                  </p>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                      Join a Health Challenge
+                    </h3>
+                    <p className="text-foreground flex-grow">
+                      Participate in our community-driven health challenges and transform your wellness journey.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -1067,10 +1079,6 @@ export default function Home() {
                     <p className="text-foreground flex-grow mb-4"> {/* Added mb-4 for spacing */}
                       Make a difference by supporting our community events and wellness initiatives.
                     </p>
-                    {/* Optional: Add a button if needed, matching other cards */}
-                    {/* <Button variant="outline" className="mt-auto border-primary text-primary hover:bg-primary/10 hover:text-primary w-full">
-                      Learn More
-                    </Button> */}
                   </div>
                 </div>
               </div>
