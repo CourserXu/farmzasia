@@ -54,3 +54,4 @@ next-env.d.ts
 /.junie/guidelines.md
 /jest.config.js
 /jest.setup.js
+/.vscode/extensions.json
