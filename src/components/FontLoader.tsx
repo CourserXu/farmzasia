@@ -1,34 +1,35 @@
 "use client";
 
-import {useEffect} from 'react';
-import {getAssetPath} from '@/utils/assetPath';
+import { useEffect } from 'react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function FontLoader() {
-  useEffect(() => {
-    // Create a style element
-    const style = document.createElement('style');
-    
-    // Use getAssetPath utility for consistent path handling
-    const fontPaths = {
-      light: getAssetPath('/fonts/AvenirLight.woff2'),
-      book: getAssetPath('/fonts/AvenirBook.woff2'),
-      medium: getAssetPath('/fonts/AvenirMedium.woff2'),
-      black: getAssetPath('/fonts/AvenirBlack.woff2')
-    };
+    useEffect(() => {
+        // Create a style element
+        const style = document.createElement('style');
 
-    // Preload fonts
-    Object.values(fontPaths).forEach(path => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'font';
-      link.type = 'font/woff2';
-      link.href = path;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-    });
-    
-    // Use the paths for font URLs with fallbacks
-    style.textContent = `
+        // Use getAssetPath utility for consistent path handling
+        const fontPaths = {
+            light: getAssetPath('/fonts/AvenirLight.woff2'),
+            book: getAssetPath('/fonts/AvenirBook.woff2'),
+            medium: getAssetPath('/fonts/AvenirMedium.woff2'),
+            black: getAssetPath('/fonts/AvenirBlack.woff2'),
+        };
+
+        // Preload fonts
+        Object.values(fontPaths).forEach((path) => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'font';
+            link.type = 'font/woff2';
+            link.href = path;
+            link.crossOrigin = 'anonymous';
+            link.setAttribute('data-font-loader', 'true'); // Add unique identifier
+            document.head.appendChild(link);
+        });
+
+        // Use the paths for font URLs with fallbacks
+        style.textContent = `
       @font-face {
         font-family: 'Avenir';
         src: url('${fontPaths.light}') format('woff2'),
@@ -37,7 +38,7 @@ export default function FontLoader() {
         font-style: normal;
         font-display: swap;
       }
-      
+
       @font-face {
         font-family: 'Avenir';
         src: url('${fontPaths.book}') format('woff2'),
@@ -46,7 +47,7 @@ export default function FontLoader() {
         font-style: normal;
         font-display: swap;
       }
-      
+
       @font-face {
         font-family: 'Avenir';
         src: url('${fontPaths.medium}') format('woff2'),
@@ -55,7 +56,7 @@ export default function FontLoader() {
         font-style: normal;
         font-display: swap;
       }
-      
+
       @font-face {
         font-family: 'Avenir';
         src: url('${fontPaths.black}') format('woff2'),
@@ -65,19 +66,21 @@ export default function FontLoader() {
         font-display: swap;
       }
     `;
-    
-    // Append the style to the document head
-    document.head.appendChild(style);
-    
-    // Cleanup function
-    return () => {
-      document.head.removeChild(style);
-      // Remove preload links
-      document.querySelectorAll('link[rel="preload"][as="font"]').forEach(link => {
-        document.head.removeChild(link);
-      });
-    };
-  }, []);
-  
-  return null;
+
+        // Append the style to the document head
+        document.head.appendChild(style);
+
+        // Cleanup function
+        return () => {
+            if (style.parentNode) {
+                style.parentNode.removeChild(style); // Ensure correct style element is removed
+            }
+            // Remove only the links created by this component
+            document.querySelectorAll('link[data-font-loader]').forEach((link) => {
+                document.head.removeChild(link);
+            });
+        };
+    }, []);
+
+    return null;
 }
