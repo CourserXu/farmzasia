@@ -129,14 +129,14 @@ const Header = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 py-4", // Apply fixed padding py-4
+        "fixed top-0 w-full z-50 transition-all duration-300 py-0", // Apply fixed padding py-0
         isScrolled ? "bg-white shadow-md" : "bg-transparent" // Keep background and shadow logic
       )}
       role="banner"
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom relative flex items-center justify-center md:justify-start lg:justify-between">
         {/* Logo */}
-        <Link href="/" className="relative w-[380px] h-[86px] block transition-all duration-300" aria-label="Farmz Asia - Home">
+        <Link href="/" className="relative w-[380px] h-[86px] block transition-all duration-300 md:-ml-16" aria-label="Farmz Asia - Home">
           <Image
             src={isScrolled ? getAssetPath("/images/farmzasia-logo-color.png") : getAssetPath("/images/farmzasia-logo-white.png")}
             alt="Farmz Asia Logo"
@@ -172,7 +172,7 @@ const Header = () => {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:block ml-4">
+        <div className="hidden md:block ml-4 lg:static absolute right-20 top-1/2 transform -translate-y-1/2">
           <Link
             href="#brands"
             className={cn(
@@ -187,7 +187,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-          <SheetTrigger asChild className="lg:hidden">
+          <SheetTrigger asChild className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2">
             <button
               className={cn(
                 "p-2.5 rounded-md transition-all duration-300",

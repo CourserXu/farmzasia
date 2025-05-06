@@ -177,7 +177,7 @@ export default function Home() {
             />
           </div>
           {/* Overlay to improve text readability */}
-          <div className="absolute inset-0 bg-[#26D07C]/25"></div>
+          <div className="absolute inset-0 bg-[#26D07C]/50"></div>
         </div>
 
         <div className="container-custom z-10 relative">
